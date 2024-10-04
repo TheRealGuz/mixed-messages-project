@@ -1,4 +1,6 @@
-/* Welcome
+/* 
+
+Welcome
              to 
                     J's
 
@@ -23,9 +25,10 @@
                      | |__| |  __/ | | |  __/ | | (_| | || (_) | |   
                       \_____|\___|_| |_|\___|_|  \__,_|\__\___/|_|   
 
-
-Please scroll to the bottom to use the generator.                     
 */
+                      
+// vvv ------------------  Please scroll to the bottom to view the instructions to use the generator.  -------------------- vvv                   
+
 
 // Generate a random acceptance message
 const randomAcceptanceMessage = () => {
@@ -120,7 +123,7 @@ const suggestionBox = suggestion => {
         console.log('Invalid entry; Please submit your suggestion using the proper format.')
     } else {
         suggestionList.push(suggestion.toLowerCase())
-        console.log('Your suggestion has been recorded and will be reviewed! Thank you for submitting!')
+        console.log('Your suggestion has been recorded and will be reviewed. Thank you for submitting!')
     }
 }
 
@@ -135,10 +138,27 @@ const viewSuggestionList = () => {
     console.log(sanitizedList)
 }
 
+// <<< ------------------------------------------------------ Use Below This Line ------------------------------------------------------------->>>
 
+// This program is a random quote generator which generates quotes based on three provided options.
+// When used correctly, the program displays an acceptance message, assigns a level of dankness, and outputs the quote to the console!
 
+/* Below are the three options that quotes can be generated for:
+    'Vine' - generates a random vine quote
+    'Spongebob' - generates a random Spongebob quote
+    'Other' - generates a random quote that only cool people can recognize ;)
+Note: the generator only accepts strings, so you will need to wrap your desired selection in single ('') or double quotes (""). Feel free to copy your desired selection above and paste it into the generator.
+-- There is also a quote for a very special, very specific group of people. You know who you are. :)
+*/
+// Example of correct use: generateDankQuote('Spongebob') 
 
+generateDankQuote()
 
+// If you have a suggestion for a dank quote, please provide it in the Suggestion Box below
+// Similar to the generator, the suggestion box only accepts strings so you will need to wrap your desired suggestion in single ('') or double quotes ("").
 
+suggestionBox()
 
+// If you would like to view the suggestion list, uncomment the line of code below (delete the two back slashes ` // ` at the beginning) and run it.
 
+// viewSuggestionList()
