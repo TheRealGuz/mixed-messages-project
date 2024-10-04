@@ -22,7 +22,9 @@
                      | | |_ |/ _ \ '_ \ / _ \ '__/ _` | __/ _ \| '__|
                      | |__| |  __/ | | |  __/ | | (_| | || (_) | |   
                       \_____|\___|_| |_|\___|_|  \__,_|\__\___/|_|   
-                                                 
+
+
+Please scroll to the bottom to use the generator.                     
 */
 
 // Generate a random acceptance message
@@ -52,7 +54,7 @@ const randomVineQuote = () => {
 // Generate a random Spongebob quote
 const randomSpongebobQuote = () => {
     let sq;
-    const spongebobQuotes = ['Where\'s the leak ma\'am?', 'Liar, Liar, Plants for hire.', 'Goodbye everyone, I\'ll remember you all in therapy.', 'He cries you a sweater of tears, and you kill him...', 'Hey pal, you just blow in from stupid town?', 'Oh these pies? They weren\'t homemade. They were made in a factory. A bomb factory. They\'re bombs.', 'DON\'S TOUCH ME, I\'M STERILE', 'FIRMLY GRASP IT!', 'Big. Meaty. CLAWS!', 'Sweet, sweet chocolate. I always HATED IT.']
+    const spongebobQuotes = ['Where\'s the leak ma\'am?', 'Liar, Liar, Plants for hire.', 'Goodbye everyone, I\'ll remember you all in therapy.', 'He cries you a sweater of tears, and you kill him...', 'Hey pal, you just blow in from stupid town?', 'Oh these pies? They weren\'t homemade. They were made in a factory. A bomb factory. They\'re bombs.', 'DON\'T TOUCH ME, I\'M STERILE', 'FIRMLY GRASP IT!', 'Big. Meaty. CLAWS!', 'Sweet, sweet chocolate. I always HATED IT.']
     sq = spongebobQuotes[Math.floor(Math.random() * 10)]
     return sq;
 }
@@ -65,7 +67,7 @@ const randomOtherQuote = () => {
     return oq;
 }
 
-//Generate quote depending on selection of predefined choices
+// Generate quote depending on selection of predefined choices
 const generateDankQuote = selection => {
     let message = randomAcceptanceMessage()
     let dankness = randomDankLevel()
@@ -109,6 +111,28 @@ Result: ${quote}`)
     } else {
         console.log('Selection not recognized. Please choose one of the available options.')
     }
+}
+
+// Setup a feature for users to suggest quotes and record the suggestions
+const suggestionList = []
+const suggestionBox = suggestion => {
+    if (typeof suggestion !== 'string' || suggestion === '') {
+        console.log('Invalid entry; Please submit your suggestion using the proper format.')
+    } else {
+        suggestionList.push(suggestion.toLowerCase())
+        console.log('Your suggestion has been recorded and will be reviewed! Thank you for submitting!')
+    }
+}
+
+// Remove duplicate suggestions and view the suggestion list
+const viewSuggestionList = () => {
+    let sanitizedList = []
+    suggestionList.forEach(suggestion => {
+        if (!sanitizedList.includes(suggestion)) {
+            sanitizedList.push(suggestion)
+        }
+    })
+    console.log(sanitizedList)
 }
 
 
